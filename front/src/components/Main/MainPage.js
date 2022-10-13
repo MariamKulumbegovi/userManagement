@@ -33,17 +33,17 @@ export const MainPage = ({ updateList }) => {
 
   function getFields(input, field) {
     var output = [];
-    for (var i=0; i < input.length ; ++i)
-        output.push({
-          text: input[i][field],
-          value: input[i][field]
-        });
+    for (var i = 0; i < input.length; ++i)
+      output.push({
+        text: input[i][field],
+        value: input[i][field]
+      });
 
-       
+
     return output;
-}
+  }
 
-let fullNameArray = getFields(users, "fullName")
+  let fullNameArray = getFields(users, "fullName")
 
   const getUsersData = async () => {
     setUsersDataLoading(true)
@@ -56,7 +56,7 @@ let fullNameArray = getFields(users, "fullName")
   const columns = [
     {
       title: 'User',
-      key:'user',
+      key: 'user',
       ellipsis: true,
       render: (_, record) => (
         <div className=' flex alignCenter '>
@@ -68,10 +68,10 @@ let fullNameArray = getFields(users, "fullName")
         </div>
       ),
       filterSearch: true,
-      filters:fullNameArray,
+      filters: fullNameArray,
       filterIcon: (filtered) => (
         <SearchOutlined
-        className='fs20px'
+          className='fs20px'
           style={{
             color: filtered ? '#1890ff' : undefined,
           }}
@@ -83,9 +83,9 @@ let fullNameArray = getFields(users, "fullName")
     {
       title: 'Role',
       dataIndex: 'isAdmin',
-      key:'Role',
+      key: 'Role',
       sorter: (a, b) => a.isAdmin - b.isAdmin,
-      sortDirections: ['ascend','descend'],
+      sortDirections: ['ascend', 'descend'],
       render: (_, record) => (
         <>
           {record.isAdmin ? (
@@ -101,13 +101,13 @@ let fullNameArray = getFields(users, "fullName")
     {
       title: 'Status',
       dataIndex: 'status',
-      key:'status',
+      key: 'status',
       render: (_, record) => (
-        <>{record.isActive ? <Switch checked /> : <Switch />} </>
+        <>{record.isActive ? <Switch disabled checked /> : <Switch  disabled />} </>
       ),
 
       sorter: (a, b) => a.isActive - b.isActive,
-      sortDirections: ['ascend','descend'],
+      sortDirections: ['ascend', 'descend'],
       width: '40%'
     },
     {
@@ -120,9 +120,10 @@ let fullNameArray = getFields(users, "fullName")
           </Link>
           <Popconfirm
             title="Are you sure to delete this user?"
-            onConfirm={()=>confirm(record.id)}
+            onConfirm={() => confirm(record.id)}
             okText="Yes"
             cancelText="No"
+            disabled={record.id == 1}
           >
             <DeleteOutlined className='pointer fs20px' />
           </Popconfirm>
@@ -138,12 +139,14 @@ let fullNameArray = getFields(users, "fullName")
     </div>
   )
 
-  const confirm = async(id) => {
-   const deleteUser = await  DelteUser(id)
-   if(deleteUser.success){
-    message.success('user deleted succesfully');
-    setUpdate(!update)
-   }
+  const confirm = async (id) => {
+
+    const deleteUser = await DelteUser(id)
+    if (deleteUser.success) {
+      message.success('user deleted succesfully');
+      setUpdate(!update)
+    }
+
   };
 
 
@@ -155,7 +158,7 @@ let fullNameArray = getFields(users, "fullName")
         columns={columns}
         dataSource={users ? users : undefined}
         footer={false}
-        pagination={{ defaultPageSize: 5, showSizeChanger: true, pageSizeOptions: ['5', '10', '20']}}
+        pagination={{ defaultPageSize: 5, showSizeChanger: true, pageSizeOptions: ['5', '10', '20'] }}
       />
     </div>
   )

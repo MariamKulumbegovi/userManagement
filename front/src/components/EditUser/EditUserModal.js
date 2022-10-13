@@ -5,7 +5,6 @@ import { useNavigate } from 'react-router-dom';
 import { EditUser } from '../../services/usersAPI';
 import { CommonInputs, validationError } from '../commonInputs/CommonInputs';
 import { userInfo } from '../Main/MainPage';
-import { useForm } from "react-hook-form";
 import './EditUser.css'
 export const EditUserModal = ({setUpdateList,updateList}) => {
     const [isModalOpen, setIsModalOpen] = useState(true);
@@ -91,7 +90,7 @@ export const EditUserModal = ({setUpdateList,updateList}) => {
                             <Switch onChange={(e)=>setIsActive(e)} checked={isActive} className='ml10px' />
                         </div>
                     </div>
-                    <CommonInputs disable={!isActive} clearInputs={editUsersSuccess} getInputsValue={getInputsValue} data={userInfo} />
+                    <CommonInputs disable={!isActive} clearInputs={false} getInputsValue={getInputsValue} data={userInfo} />
                 </div>
                 <Button disabled={validationError} loading={editUsersLoading} onClick={updateUser} className='sendInvitation-btn pointer'>Save Changes</Button>
             </Modal>

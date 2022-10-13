@@ -10,9 +10,9 @@ export const AddNewUserModal = ({ setUpdate, update }) => {
   const [postUsersLoading, setPostUsersLoading] = useState(false)
   const [postUsersSuccess, setPostUsersSuccess] = useState(false)
   const [userData, setUserData] = useState({
-    fullName:'',
-    email:'',
-    role:null
+    fullName: '',
+    email: '',
+    role: null
   })
 
 
@@ -38,17 +38,18 @@ export const AddNewUserModal = ({ setUpdate, update }) => {
     )
   }
 
-  let newUserData = {
-    fullName: userData.fullName,
-    email: userData.email,
-    isAdmin: userData.role? JSON.parse(userData.role) : null,
-    isActive: false
-  }
+  // let newUserData = {
+  //   fullName: userData.fullName,
+  //   email: userData.email,
+  //   isAdmin: userData.role ? JSON.parse(userData.role) : null,
+  //   isActive: false,
+  //   key: crypto.randomUUID()
+  // }
 
   const sendInvitation = async () => {
     setPostUsersLoading(true)
     setPostUsersSuccess(false)
-    const post = await postNewUser(newUserData)
+    const post = await postNewUser({ ...userData, isActive: false, isAdmin: userData.role ? JSON.parse(userData.role) : null, key: crypto.randomUUID() })
     setPostUsersLoading(false)
     if (post.success) {
       setPostUsersSuccess(true)
