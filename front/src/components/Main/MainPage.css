@@ -1,0 +1,8 @@
+.mainWrapper {
+  min-height: 100vh;
+  padding: 100px;
+}
+.ant-table-title {
+  display: flex;
+  justify-content: flex-start;
+}

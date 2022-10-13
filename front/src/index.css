@@ -1,0 +1,94 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.flex {
+  display: flex;
+}
+
+.justifyCenter {
+  justify-content: center;
+}
+
+.spaceBetween {
+  justify-content: space-between;
+}
+
+.alignCenter {
+  align-items: center;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.fdColumn {
+  flex-direction: column;
+}
+
+.grey {
+  color: #707070;
+}
+
+.fs20px {
+  font-size: 20px;
+}
+
+.fs50px {
+  font-size: 50px;
+}
+
+.ml15px {
+  margin-left: 15px;
+}
+.ml10px {
+  margin-left: 10px !important;
+}
+
+.alSelfBaseline {
+  align-self: baseline;
+}
+
+.blue {
+  color: #2a84ff;
+}
+
+.inputsCommon {
+  border-radius: 8px !important;
+  border: 1px solid #c9c9c9;
+  height: 34px;
+  width: 100%;
+}
+
+.input-icons i {
+  position: absolute;
+}
+
+.input-icons {
+  width: 100%;
+  margin-top: 12px;
+}
+
+.icon {
+  padding: 7px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 5px;
+  text-align: start;
+  padding-left: 25px;
+}
+.red {
+  color: red;
+}

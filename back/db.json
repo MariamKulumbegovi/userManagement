@@ -1,0 +1,11 @@
+{
+  "users": [
+    {
+      "fullName": "mariam kulumbegovi",
+      "email": " mariam.kulumbegovi@gmail.com",
+      "isAdmin": true,
+      "isActive": false,
+      "id": 1
+    }
+  ]
+}

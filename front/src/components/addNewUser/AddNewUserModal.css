@@ -1,0 +1,20 @@
+.ant-modal-header,
+.ant-modal-content {
+  border-radius: 16px !important;
+}
+.ant-modal {
+  width: 380px !important;
+  min-height: 352px !important;
+}
+.sendInvitation-btn {
+  width: 100% !important;
+  color: #ffff !important;
+  background-color: #2a84ff !important;
+  height: 40px !important;
+  border-radius: 8px !important;
+  margin-top: 15px !important;
+  border: none !important;
+}
+.sendInvitation-btn:hover {
+  background-color: #2569c9 !important;
+}

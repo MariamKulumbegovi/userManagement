@@ -1,0 +1,23 @@
+.resendInvitation {
+    width: 100% !important;
+    color: #2a84ff !important;
+    background-color: #adc1dd !important;
+    height: 40px !important;
+    border-radius: 8px !important;
+    margin-top: 15px !important;
+    border: none !important;
+}
+
+.resendInvitation:hover {
+    background-color: #79a7e7 !important;
+
+}
+
+.editUserModalWrapper {
+    border: 1px solid rgb(233 233 233);
+    padding: 20px;
+    -webkit-box-shadow: 1px 3px 6px 0px rgba(173, 157, 173, 1);
+    -moz-box-shadow: 1px 3px 6px 0px rgba(173, 157, 173, 1);
+    box-shadow: 1px 3px 6px 0px rgba(173, 157, 173, 1);
+    border-radius: 12px;
+}
